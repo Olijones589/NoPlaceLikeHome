@@ -208,8 +208,8 @@ bindsym $mod+r mode "resize"
 
 # Super Awesome! (hence Super+a)
 mode "quickpatch" {
-	bindsym a exec bash ~/Code/sway/restart_audio.sh ; mode "default"
-	bindsym l exec bash ~/Code/sway/lock.sh ; mode "default"
+	bindsym a exec bash ~/Code/NoPlaceLikeHome/sway-commands/restart_audio.sh ; mode "default"
+	bindsym l exec bash ~/Code/NoPlaceLikeHome/sway-commands/lock.sh ; mode "default"
 	bindsym s exec ~/Downloads/Discord/Discord ; mode "default"
 	bindsym x exec  ; mode "default"
 
