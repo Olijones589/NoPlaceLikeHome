@@ -15,7 +15,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 # Recommends: foot
-set $term foot
+set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -31,11 +31,11 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg /usr/share/backgrounds/default-dark.jxl fill
+# output * bg /usr/share/backgrounds/miku.png fill
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+output DP-2 pos 1920 0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -203,6 +203,23 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Oliver's AWESOME binds:
+#
+
+# Super Awesome! (hence Super+a)
+mode "quickpatch" {
+	bindsym a exec bash ~/Code/sway/restart_audio.sh ; mode "default"
+	bindsym l exec bash ~/Code/sway/lock.sh ; mode "default"
+	bindsym s exec ~/Downloads/Discord/Discord ; mode "default"
+	bindsym x exec  ; mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+a mode "quickpatch"
+exec bash ~/Code/background/main.sh &
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
